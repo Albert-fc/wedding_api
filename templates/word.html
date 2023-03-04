@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+<!-- Title -->
+{% block title %}Index template{% endblock %}
+
+<!-- Extra scripts -->
+{% block scripts %}
+<script src=""></script>
+{% endblock %}
+
+<!-- Content -->
+{% block content %}
+
+<h1>{{ title }}<span style="color: red">{{ word }}</span></h1>
+
+<a class="btn btn-outline-primary mt-3" href="/">
+  <i class="bi bi-arrow-left mr-1"></i>Go back
+</a>
+
+{% endblock %}

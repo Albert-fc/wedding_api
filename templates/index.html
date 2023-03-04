@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+<!-- Title -->
+{% block title %}Index template{% endblock %}
+
+<!-- Extra scripts -->
+{% block scripts %}
+<script src=""></script>
+{% endblock %}
+
+<!-- Content -->
+{% block content %}
+
+<h1>{{ title }}</h1>
+<div class="table-responsive mt-3">
+  <table id="datatable" class="table table-sm mt-3">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Random word</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for word in words %}
+      <tr>
+
+        <td class="text-monospace">{{loop.index}}</td>
+        <td>{{word}}</td>
+        <td>
+          <a class="btn btn-outline-primary" href="/{{ word | lower }}/">
+            <i class="bi bi-folder2-open"></i>
+          </a>
+        </td>
+
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+</div>
+{% endblock %}
