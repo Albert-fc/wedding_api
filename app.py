@@ -1,14 +1,8 @@
 from flask import (
     Flask,
-    render_template,
     jsonify,
-    redirect,
-    request,
-    session,
-    send_from_directory,
 )
 
-import datetime
 
 app = Flask(__name__)
 
@@ -30,7 +24,7 @@ def index(id):
     return jsonify(metadata)
 
 
-@app.route("/contracts/boda")
+@app.route("/api/contracts/boda")
 def api():
     metadata = {
         "name": "Boda Gatitos",
@@ -42,4 +36,4 @@ def api():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host="localhost")
+    app.run(debug=True, threaded=True, port=5000)
